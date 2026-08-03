@@ -77,12 +77,31 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
 .hallazgo-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
 .hallazgo-text{font-size:16px;font-weight:500;color:var(--navy);line-height:1.65}
 
-/* ── TABLA DE 4 COLUMNAS ─────────────────────────── */
-.tabla-4{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:40px}
-.tabla-4 th{background:var(--navy);color:rgba(255,255,255,.82);font-size:13px;font-weight:700;padding:14px 20px;text-align:left;letter-spacing:.03em}
-.tabla-4 td{padding:16px 20px;font-size:14px;color:var(--text);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;background:var(--white)}
-.tabla-4 tr:last-child td{border-bottom:none}
-.tabla-4 tr:hover td{background:var(--bg)}
+/* ── SÍNTESIS EJECUTIVA · CONCLUSIONES ───────────── */
+.executive-insights{margin-bottom:40px}
+.insights-title{font-family:'Merriweather',serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-.01em;margin-bottom:12px}
+.insights-lead{font-size:15px;color:var(--muted);max-width:680px;line-height:1.75;margin-bottom:32px}
+.insights-list{display:flex;flex-direction:column;gap:20px}
+.insight-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--orange);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow .15s ease}
+.insight-card:hover{box-shadow:0 6px 18px rgba(27,53,93,.08)}
+.insight-header{display:flex;align-items:baseline;gap:20px;padding:26px 32px 22px}
+.insight-number{font-family:'Merriweather',serif;font-size:30px;font-weight:700;color:var(--orange);line-height:1;flex-shrink:0}
+.insight-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.insight-title{font-family:'Merriweather',serif;font-size:19px;font-weight:700;color:var(--navy);line-height:1.35}
+.insight-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border)}
+.insight-detail{padding:22px 32px 26px;border-right:1px solid var(--border)}
+.insight-detail:last-child{border-right:none}
+.insight-detail-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.insight-detail-text{font-size:13.5px;color:var(--text);line-height:1.7}
+.insight-implication{background:rgba(125,172,227,.13)}
+.insight-implication .insight-detail-label{color:var(--navy)}
+@media(max-width:900px){
+  .insight-detail-grid{grid-template-columns:1fr}
+  .insight-detail{border-right:none;border-bottom:1px solid var(--border);padding:20px 24px}
+  .insight-detail:last-child{border-bottom:none}
+  .insight-header{padding:22px 24px 18px;gap:14px}
+  .insight-title{font-size:17px}
+}
 
 /* ── CARDS HALLAZGOS ─────────────────────────────── */
 .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
@@ -191,30 +210,32 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
 .footer-brand{font-family:'Merriweather',serif;font-size:13px;font-weight:700;color:rgba(255,255,255,.7)}
 .footer-meta{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.04em}
 
-/* ── CHALLENGE DIRECTOR ────────────────────────── */
-.challenge-section{padding:72px 72px;background:var(--navy);position:relative;overflow:hidden}
-.challenge-section::before{content:'';position:absolute;bottom:-200px;right:-200px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(255,255,255,0.04)}
-.challenge-grid-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.08);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:2px}
-.challenge-col{padding:32px 28px}
-.challenge-col-header{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F2A07A;margin-bottom:6px}
-.challenge-col-title{font-family:'Merriweather',serif;font-size:20px;font-weight:700;color:white;margin-bottom:18px;line-height:1.25}
-.challenge-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
-.challenge-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;background:var(--orange)}
-.challenge-dot.teal{background:var(--teal)}
-.challenge-dot.green{background:#4CAF7D}
-.challenge-item-text{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6}
-.challenge-gap-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.08);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:20px}
-.challenge-gap-col{padding:20px 28px;background:rgba(184,48,48,0.12)}
-.challenge-gap-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E07070;margin-bottom:8px}
-.challenge-gap-item{font-size:12.5px;color:rgba(255,255,255,0.6);line-height:1.55;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+/* ── SÍNTESIS PARA DECISIÓN (versión clara) ─────── */
+.challenge-section{padding:72px 72px;background:var(--white)}
+.challenge-item{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bg)}
+.challenge-item:last-child{border-bottom:none}
+.challenge-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:8px;background:var(--orange)}
+.challenge-dot.teal{background:var(--teal2)}
+.challenge-dot.green{background:var(--green)}
+.challenge-item-text{font-size:13.5px;color:var(--text);line-height:1.65}
+.challenge-gap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.challenge-gap-col{border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;background:var(--white)}
+.challenge-gap-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.challenge-gap-item{font-size:13px;color:var(--muted);line-height:1.6;padding:7px 0;border-bottom:1px solid var(--bg)}
 .challenge-gap-item:last-child{border-bottom:none}
-.pregunta-dir{background:rgba(231,83,1,0.12);border:1px solid rgba(231,83,1,0.25);border-radius:var(--radius-lg);padding:28px 32px;margin-top:20px}
-.pregunta-dir-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.pregunta-dir{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;margin-top:24px}
+.pregunta-dir-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
 .pregunta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.pregunta-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:18px 16px}
-.pregunta-num{font-family:'Merriweather',serif;font-size:28px;font-weight:700;color:rgba(231,83,1,0.4);margin-bottom:8px}
-.pregunta-text{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;font-weight:500}
-.pregunta-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;line-height:1.5}
+.pregunta-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px}
+.pregunta-num{font-family:'Merriweather',serif;font-size:26px;font-weight:700;color:var(--orange);margin-bottom:8px}
+.pregunta-text{font-size:14px;color:var(--navy);line-height:1.5;font-weight:700}
+.pregunta-sub{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+@media(max-width:900px){
+  .pregunta-grid,.challenge-gap-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .section,.challenge-section{padding:56px 22px}
+}
 
 </style>
 </head>
@@ -272,36 +293,86 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
     <div class="hallazgo-text">Los tres segmentos comparten necesidades estructurales: digitalización del ciclo de vida, capacidad de decisión oportuna e integración de la relación con el cliente. La diferencia entre segmentos no radica en el tipo de necesidad, sino en el grado de complejidad y personalización requerido.</div>
   </div>
 
-  <div class="tabla-4">
-    <caption style="caption-side:top;font-size:13px;font-weight:800;color:var(--navy);text-align:left;padding:0 0 14px 0;letter-spacing:.01em">Principales conclusiones del levantamiento</caption>
-    <thead>
-      <tr>
-        <th style="width:22%">Hallazgo clave</th>
-        <th style="width:26%">Evidencia del levantamiento</th>
-        <th style="width:26%">Lectura estratégica</th>
-        <th style="width:26%">Implicación para Consubanco</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Los tres segmentos comparten necesidades estructurales.</strong></td>
-        <td>Participantes de distintas áreas identificaron brechas coincidentes en la gestión del cliente, la oferta de productos y la operación.</td>
-        <td>El modelo futuro no requiere soluciones independientes para cada segmento. Debe construirse sobre capacidades comunes que puedan configurarse de acuerdo con la complejidad y las necesidades específicas de cada banca.</td>
-        <td>Diseñar una plataforma compartida y parametrizable permitiría aprovechar economías de escala, reducir la fragmentación tecnológica y acelerar la evolución de los tres segmentos.</td>
-      </tr>
-      <tr>
-        <td><strong>La originación digital es una condición básica del modelo futuro.</strong></td>
-        <td>El 100% de los participantes señaló que la originación de productos de crédito y captación debe realizarse de manera digital.</td>
-        <td>Existe un mandato claro para reducir la dependencia de actividades presenciales en todas las etapas que puedan digitalizarse. La experiencia digital deja de ser un diferenciador y se convierte en el estándar mínimo esperado.</td>
-        <td>El modelo operativo deberá diseñarse con la digitalización como ruta principal, incorporando atención asistida únicamente en los momentos que requieran acompañamiento o validaciones especializadas.</td>
-      </tr>
-      <tr>
-        <td><strong>La decisión de crédito requiere dos rutas diferenciadas.</strong></td>
-        <td>El levantamiento identificó una ruta paramétrica para créditos de menor monto y una ruta de comité para operaciones superiores a 4 millones de UDIS.</td>
-        <td>El modelo de evaluación debe ser dual desde su diseño. Ambas rutas necesitan compartir información, controles y validaciones automatizadas, aunque el nivel de análisis y autorización sea diferente.</td>
-        <td>Será prioritario desarrollar capacidades de scoring, integrar datos alternativos como CIEC y comportamiento previo, y automatizar las validaciones que anteceden tanto a la decisión paramétrica como al comité de crédito.</td>
-      </tr>
-    </tbody>
+  <div class="executive-insights">
+    <div class="eyebrow">Síntesis ejecutiva</div>
+    <h3 class="insights-title">Tres conclusiones orientan el diseño del modelo futuro</h3>
+    <p class="insights-lead">El levantamiento identificó una base común de necesidades para los tres segmentos, así como dos definiciones que deberán incorporarse desde el diseño: la digitalización como ruta principal y un modelo dual para la decisión de crédito.</p>
+
+    <div class="insights-list">
+
+      <article class="insight-card">
+        <div class="insight-header">
+          <div class="insight-number">01</div>
+          <div>
+            <div class="insight-kicker">Conclusión</div>
+            <h4 class="insight-title">Los tres segmentos comparten una base común de necesidades</h4>
+          </div>
+        </div>
+        <div class="insight-detail-grid">
+          <div class="insight-detail">
+            <div class="insight-detail-label">Evidencia del levantamiento</div>
+            <div class="insight-detail-text">Líderes de distintas áreas identificaron brechas coincidentes en la gestión del cliente, la oferta de productos y la operación.</div>
+          </div>
+          <div class="insight-detail">
+            <div class="insight-detail-label">Lectura estratégica</div>
+            <div class="insight-detail-text">El modelo futuro debe construirse sobre capacidades compartidas, configurables según la complejidad y las necesidades específicas de cada segmento.</div>
+          </div>
+          <div class="insight-detail insight-implication">
+            <div class="insight-detail-label">Implicación para Consubanco</div>
+            <div class="insight-detail-text">Una plataforma común y parametrizable permitiría reducir la fragmentación tecnológica, aprovechar economías de escala y acelerar la evolución de PyME, Crédito Comercial y Banca de Gobierno.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="insight-card">
+        <div class="insight-header">
+          <div class="insight-number">02</div>
+          <div>
+            <div class="insight-kicker">Conclusión</div>
+            <h4 class="insight-title">La originación digital es una condición de entrada del modelo futuro</h4>
+          </div>
+        </div>
+        <div class="insight-detail-grid">
+          <div class="insight-detail">
+            <div class="insight-detail-label">Evidencia del levantamiento</div>
+            <div class="insight-detail-text">El 100% de los participantes señaló que los productos de crédito y captación deben poder originarse digitalmente.</div>
+          </div>
+          <div class="insight-detail">
+            <div class="insight-detail-label">Lectura estratégica</div>
+            <div class="insight-detail-text">La digitalización debe ser la ruta principal del proceso. La atención asistida deberá reservarse para los momentos que requieran acompañamiento, análisis especializado o validaciones específicas.</div>
+          </div>
+          <div class="insight-detail insight-implication">
+            <div class="insight-detail-label">Implicación para Consubanco</div>
+            <div class="insight-detail-text">El modelo operativo deberá priorizar la trazabilidad, el autoservicio y la continuidad del proceso entre canales, reduciendo las dependencias presenciales.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="insight-card">
+        <div class="insight-header">
+          <div class="insight-number">03</div>
+          <div>
+            <div class="insight-kicker">Conclusión</div>
+            <h4 class="insight-title">La decisión de crédito requiere dos rutas integradas</h4>
+          </div>
+        </div>
+        <div class="insight-detail-grid">
+          <div class="insight-detail">
+            <div class="insight-detail-label">Evidencia del levantamiento</div>
+            <div class="insight-detail-text">Se identificó una ruta paramétrica para operaciones de menor monto y una ruta de comité para operaciones superiores a 4 millones de UDIS.</div>
+          </div>
+          <div class="insight-detail">
+            <div class="insight-detail-label">Lectura estratégica</div>
+            <div class="insight-detail-text">Ambas rutas deben compartir información, controles y validaciones automatizadas. La diferencia deberá concentrarse en el nivel de análisis y autorización requerido.</div>
+          </div>
+          <div class="insight-detail insight-implication">
+            <div class="insight-detail-label">Implicación para Consubanco</div>
+            <div class="insight-detail-text">Será necesario fortalecer los modelos de evaluación, incorporar datos alternativos como CIEC y comportamiento previo, y automatizar las validaciones anteriores a la decisión.</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
@@ -716,32 +787,59 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
 
 <!-- ── CHALLENGE DEL DIRECTOR ─────────────────────── -->
 <section class="challenge-section" id="challenge">
-  <div class="eyebrow light-eye">Síntesis para la toma de decisiones</div>
-  <h2 class="sec-title white" style="margin-bottom:10px">El diagnóstico permite precisar el punto de partida, el modelo futuro y las capacidades disponibles</h2>
-  <p class="sec-lead white" style="margin-bottom:36px">La síntesis reúne la situación actual identificada, las características del modelo futuro y los activos o capacidades que pueden habilitar su evolución. Su propósito es facilitar la definición de prioridades y decisiones posteriores.</p>
+  <div class="eyebrow">Síntesis para la toma de decisiones</div>
+  <h2 class="sec-title" style="margin-bottom:10px">El diagnóstico permite precisar el punto de partida, el modelo futuro y las capacidades disponibles</h2>
+  <p class="sec-lead" style="margin-bottom:36px">La síntesis reúne la situación actual identificada, las características del modelo futuro y los activos o capacidades que pueden habilitar su evolución. Su propósito es facilitar la definición de prioridades y decisiones posteriores.</p>
 
-  <div class="challenge-grid-top">
-    <div class="challenge-col" style="background:rgba(27,53,93,0.6)">
-      <div class="challenge-col-header">01</div>
-      <div class="challenge-col-title">Situación actual</div>
+  <div class="acord open">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">01 · Situación actual</div>
+          <div class="acord-sub">Punto de partida identificado en el levantamiento</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
       <div class="challenge-item"><div class="challenge-dot"></div><div class="challenge-item-text">Una Banca Mayorista con cartera real y clientes activos, pero sin un modelo operativo diseñado específicamente para el segmento empresarial</div></div>
       <div class="challenge-item"><div class="challenge-dot"></div><div class="challenge-item-text">Tres segmentos que operan con lógicas distintas: PyME, Crédito Comercial y Banca de Gobierno sin una plataforma que los unifique</div></div>
       <div class="challenge-item"><div class="challenge-dot"></div><div class="challenge-item-text">Evaluación de crédito manual para la gran mayoría de los casos, sin modelo paramétrico ni aprovechamiento de datos alternativos</div></div>
       <div class="challenge-item"><div class="challenge-dot"></div><div class="challenge-item-text">Onboarding y formalización con dependencias presenciales que limitan la velocidad y la escala de la operación</div></div>
       <div class="challenge-item"><div class="challenge-dot"></div><div class="challenge-item-text">Core bancario con capacidades insuficientes para la complejidad del crédito comercial estructurado</div></div>
     </div>
-    <div class="challenge-col" style="background:rgba(27,53,93,0.4)">
-      <div class="challenge-col-header">02</div>
-      <div class="challenge-col-title">Modelo futuro</div>
+  </div>
+
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">02 · Modelo futuro</div>
+          <div class="acord-sub">Características del modelo objetivo hacia 2031</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
       <div class="challenge-item"><div class="challenge-dot teal"></div><div class="challenge-item-text">Una Banca Mayorista con identidad propia, P&amp;L diferenciado y modelo operativo diseñado para servir a empresas e instituciones desde la digitalización</div></div>
       <div class="challenge-item"><div class="challenge-dot teal"></div><div class="challenge-item-text">Plataforma única compartida entre los tres segmentos, con parametrización por tipo de cliente y nivel de complejidad</div></div>
       <div class="challenge-item"><div class="challenge-dot teal"></div><div class="challenge-item-text">Evaluación de crédito con ruta paramétrica y ruta de comité: las dos operando sobre los mismos datos y controles automatizados</div></div>
       <div class="challenge-item"><div class="challenge-dot teal"></div><div class="challenge-item-text">Ciclo de vida completamente digital: desde el primer contacto con el cliente hasta la operación y administración del portafolio</div></div>
       <div class="challenge-item"><div class="challenge-dot teal"></div><div class="challenge-item-text">Ecosistema financiero que genera retención y crecimiento del valor del cliente: crédito, captación, dispersión y banca digital integrados en una sola relación</div></div>
     </div>
-    <div class="challenge-col" style="background:rgba(27,53,93,0.25)">
-      <div class="challenge-col-header">03</div>
-      <div class="challenge-col-title">Capacidades y activos disponibles</div>
+  </div>
+
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">03 · Capacidades y activos disponibles</div>
+          <div class="acord-sub">Fortalezas que pueden habilitar la evolución del modelo</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
       <div class="challenge-item"><div class="challenge-dot green"></div><div class="challenge-item-text">Cartera activa en los tres segmentos y conocimiento real del mercado objetivo: PyMEs medianas con potencial de largo plazo</div></div>
       <div class="challenge-item"><div class="challenge-dot green"></div><!-- VALIDAR CONTENIDO: esta afirmación requiere confirmación del equipo --><div class="challenge-item-text">Infraestructura de pagos: SPEI, CoDi y dispersión activos en el sistema financiero mexicano</div></div>
       <div class="challenge-item"><div class="challenge-dot green"></div><div class="challenge-item-text">Líderes de negocio que entienden la oportunidad y participaron activamente en construir la visión futura durante el levantamiento</div></div>
@@ -751,27 +849,37 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
   </div>
 
   <!-- Brechas críticas -->
-  <div style="margin-top:20px;margin-bottom:4px">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;padding:0 4px">Brechas que la dirección debe resolver</div>
-  </div>
-  <div class="challenge-gap-row">
-    <div class="challenge-gap-col">
-      <div class="challenge-gap-label">Brecha de capacidad de decisión</div>
-      <div class="challenge-gap-item">Sin modelo paramétrico, el banco no puede escalar la colocación sin escalar el equipo de análisis</div>
-      <div class="challenge-gap-item">Los datos alternativos (CIEC, SPEI, CFDI) no se están usando en la evaluación de riesgo</div>
-      <!-- VALIDAR CONTENIDO: esta afirmación requiere confirmación del equipo --><div class="challenge-gap-item">Los tiempos de resolución actuales pueden representar una desventaja frente a competidores con modelos más ágiles</div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Brechas que la dirección debe resolver</div>
+          <div class="acord-sub">Capacidad de decisión · Plataforma y core · Experiencia del cliente</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
     </div>
-    <div class="challenge-gap-col">
-      <div class="challenge-gap-label">Brecha de plataforma y core</div>
-      <div class="challenge-gap-item">El core actual no soporta la complejidad del crédito estructurado: disposiciones múltiples, garantías cruzadas, devengamiento diferenciado</div>
-      <div class="challenge-gap-item">No existe visión 360 del cliente compartida entre sistemas y áreas</div>
-      <div class="challenge-gap-item">La banca digital empresarial no tiene las herramientas de autonomía transaccional que el segmento requiere</div>
-    </div>
-    <div class="challenge-gap-col">
-      <div class="challenge-gap-label">Brecha de experiencia del cliente</div>
-      <div class="challenge-gap-item">El onboarding no está digitalizado de extremo a extremo: el cliente percibe lentitud desde el primer contacto</div>
-      <div class="challenge-gap-item">Formalización post-aprobación con dependencias presenciales que no son competitivas</div>
-      <div class="challenge-gap-item">El cliente empresarial no tiene visibilidad de su portafolio completo desde un solo lugar</div>
+    <div class="acord-body">
+      <div class="challenge-gap-grid">
+        <div class="challenge-gap-col">
+          <div class="challenge-gap-label">Brecha de capacidad de decisión</div>
+          <div class="challenge-gap-item">Sin modelo paramétrico, el banco no puede escalar la colocación sin escalar el equipo de análisis</div>
+          <div class="challenge-gap-item">Los datos alternativos (CIEC, SPEI, CFDI) no se están usando en la evaluación de riesgo</div>
+          <!-- VALIDAR CONTENIDO: esta afirmación requiere confirmación del equipo --><div class="challenge-gap-item">Los tiempos de resolución actuales pueden representar una desventaja frente a competidores con modelos más ágiles</div>
+        </div>
+        <div class="challenge-gap-col">
+          <div class="challenge-gap-label">Brecha de plataforma y core</div>
+          <div class="challenge-gap-item">El core actual no soporta la complejidad del crédito estructurado: disposiciones múltiples, garantías cruzadas, devengamiento diferenciado</div>
+          <div class="challenge-gap-item">No existe visión 360 del cliente compartida entre sistemas y áreas</div>
+          <div class="challenge-gap-item">La banca digital empresarial no tiene las herramientas de autonomía transaccional que el segmento requiere</div>
+        </div>
+        <div class="challenge-gap-col">
+          <div class="challenge-gap-label">Brecha de experiencia del cliente</div>
+          <div class="challenge-gap-item">El onboarding no está digitalizado de extremo a extremo: el cliente percibe lentitud desde el primer contacto</div>
+          <div class="challenge-gap-item">Formalización post-aprobación con dependencias presenciales que no son competitivas</div>
+          <div class="challenge-gap-item">El cliente empresarial no tiene visibilidad de su portafolio completo desde un solo lugar</div>
+        </div>
+      </div>
     </div>
   </div>
 
