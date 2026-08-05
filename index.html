@@ -237,6 +237,27 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
   .section,.challenge-section{padding:56px 22px}
 }
 
+/* ── TEMENOS · REFERENCIA DE PLATAFORMA ──────────── */
+.pb-green{background:rgba(0,122,41,.1);color:var(--green)}
+.pb-gray{background:rgba(102,102,102,.12);color:var(--slate)}
+.mod-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.mod-row{background:var(--white);padding:14px 22px;display:grid;grid-template-columns:230px 1fr auto;gap:16px;align-items:center}
+.mod-name{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.35}
+.mod-desc{font-size:12.5px;color:var(--muted);line-height:1.55}
+.ficha-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin:18px 0 8px}
+.ficha-text{font-size:13.5px;color:var(--text);line-height:1.7}
+.ficha-palancas{display:flex;flex-direction:column;gap:8px}
+.ficha-palanca{font-size:13px;color:var(--text);line-height:1.6;padding-left:14px;position:relative}
+.ficha-palanca::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.ficha-palanca b{color:var(--navy)}
+.ficha-cost{background:rgba(152,57,32,.06);border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin-top:18px;font-size:13px;color:var(--text);line-height:1.65}
+.ficha-cost b{color:var(--red);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+@media(max-width:900px){.mod-row{grid-template-columns:1fr;gap:6px}}
+.dim-link{display:block;text-decoration:none;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.dim-link:hover{border-color:var(--teal2);box-shadow:0 6px 16px rgba(27,53,93,.08)}
+.dim-cta{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.05em}
+.dim-cta::after{content:' →'}
+#temenos-base,#temenos-mapa,#temenos-fichas{scroll-margin-top:70px}
 </style>
 </head>
 <body>
@@ -249,9 +270,11 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
   <a href="#metodologia">Metodología</a>
   <a href="#hallazgos">Hallazgos</a>
   <a href="#ciclo">Ciclo de vida</a>
-  <a href="#capacidades">Capacidades</a>
   <a href="#mercado">Mercado</a>
-  <a href="#oportunidades">Oportunidades</a><a href="#challenge">Síntesis para decisión</a>
+  <a href="#oportunidades">Oportunidades</a>
+  <a href="#challenge">Síntesis para decisión</a>
+  <a href="#capacidades">Capacidades</a>
+  <a href="#temenos">Temenos</a>
 </nav>
 
 <!-- HERO -->
@@ -285,8 +308,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
 <!-- ── CONTEXTO ──────────────────────────────────── -->
 <section class="section light" id="contexto">
   <div class="eyebrow">Diagnóstico</div>
-  <h2 class="sec-title">La Planeación 2027-2031 requiere definir un modelo de Banca Mayorista</h2>
-  <p class="sec-lead">La Planeación Estratégica 2027-2031 amplió el alcance inicial del ejercicio para incorporar una visión de la Banca Mayorista. El diagnóstico identifica las necesidades comunes de los segmentos PyME, Crédito Comercial y Banca de Gobierno, así como las capacidades necesarias para atender sus diferencias de escala, complejidad y personalización.</p>
+  <h2 class="sec-title">Evolución del alcance: hacia un modelo integral de Banca Mayorista</h2>
+  <p class="sec-lead">El ejercicio surgió para atender necesidades inmediatas de Crédito Comercial. Sin embargo, conforme avanzó el análisis, se amplió su alcance hacia una visión estratégica y de largo plazo, alineada con la Planeación Estratégica 2027–2031. Esta evolución permitió integrar las perspectivas de PyME, Crédito Comercial y Banca de Gobierno, con el propósito de identificar y definir las capacidades requeridas para construir un modelo integral de Banca Mayorista.</p>
 
   <div class="hallazgo-box">
     <div class="hallazgo-label">Hallazgo central</div>
@@ -528,7 +551,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
         <div class="card teal">
           <div class="card-label">Necesidad de negocio</div>
           <div class="card-title">Flexibilidad de producto y análisis de crédito diferenciado</div>
-          <div class="card-body">Tasas, plazos, amortización y garantías configurables. Ruta de comité para créditos mayores a 4 millones de UDIS. Integración con ERP del cliente. Reportería regulatoria separada de la administración operativa del crédito.</div>
+          <div class="card-body">Tasas, plazos, amortización y garantías configurables. Ruta de comité para créditos mayores a 4 millones de UDIS. Reportería regulatoria separada de la administración operativa del crédito.</div>
         </div>
         <div class="card navy">
           <div class="card-label">Brecha principal</div>
@@ -637,52 +660,6 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
         <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F2A07A;margin-bottom:6px">Brecha identificada</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.55">El core actual presenta limitaciones para administrar el crédito estructurado complejo. Parte de la reportería regulatoria requiere procesos manuales y no existe una integración generalizada con los sistemas ERP de los clientes.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CAPACIDADES TRANSVERSALES ─────────────────── -->
-<section class="section" id="capacidades">
-  <div class="eyebrow">Capacidades habilitadoras</div>
-  <h2 class="sec-title">La evolución de los tres segmentos depende de capacidades comunes</h2>
-  <p class="sec-lead">El diagnóstico identificó capacidades regulatorias, operativas, tecnológicas y de información que deben atenderse de forma común. Su configuración podrá variar por segmento, producto y nivel de complejidad.</p>
-
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
-    <div class="card gold">
-      <div class="card-label">Capacidad 1</div>
-      <div class="card-title">Cumplimiento regulatorio</div>
-      <div class="card-body">KYC/CDD desde el onboarding y en actualizaciones periódicas. Buró de crédito, listas negras (OFAC, CNBV), buró legal y propietario real. Reportes a CNBV, Banxico, SIC e IPAB diferenciados por tipo de producto. Cálculo de reservas por producto y parámetros de riesgo.</div>
-      <div class="card-tag">CNBV · PLD · Banxico · IPAB</div>
-    </div>
-    <div class="card navy">
-      <div class="card-label">Capacidad 2</div>
-      <div class="card-title">Reglas de negocio</div>
-      <div class="card-body">Motor de reglas centralizado que cubra elegibilidad, condiciones de producto, límites de autorización y flujos de aprobación. Debe permitir configurar reglas por segmento y producto sin intervención de TI para ajustes de parámetros. Vinculación con rentabilidad individual y de portafolio.</div>
-      <div class="card-tag">Motor de reglas · Parametrización · Rentabilidad</div>
-    </div>
-    <div class="card teal">
-      <div class="card-label">Capacidad 3</div>
-      <div class="card-title">Seguridad</div>
-      <div class="card-body">CVV dinámico y doble factor para banca digital. Control de acceso por usuario con atributos diferenciados dentro del cliente. Auditoría de cambios en sistemas con notificación a todas las áreas afectadas. Estándares de ciberseguridad en aplicaciones transaccionales.</div>
-      <div class="card-tag">Autenticación · Control de acceso · Auditoría</div>
-    </div>
-    <div class="card gold">
-      <div class="card-label">Capacidad 4</div>
-      <div class="card-title">Capacidades operativas</div>
-      <div class="card-body">Capacidad de core bancario que permita administrar de manera consistente los productos, operaciones e información requeridos por los segmentos. Automatización de procesos que permita escalar sin incrementar la plantilla. Incorporación de inteligencia artificial en los procesos que lo permitan, con cumplimiento regulatorio. Banca digital funcional para el cliente empresarial.</div>
-      <div class="card-tag">Core · IA · Automatización · Escalabilidad</div>
-    </div>
-    <div class="card navy">
-      <div class="card-label">Capacidad 5</div>
-      <div class="card-title">Monitoreo y control</div>
-      <div class="card-body">Flujo de actualización de expediente e información financiera en tiempo y forma. Conexiones con sistemas de PLD, prevención de fraudes y sanciones. Información en tiempo real para monitoreo de cartera. Integración con ERP del cliente para registro contable correcto.</div>
-      <div class="card-tag">Tiempo real · PLD · ERP · Cartera</div>
-    </div>
-    <div class="card green">
-      <div class="card-label">Prioridad transversal</div>
-      <div class="card-title">Visión 360 del cliente</div>
-      <div class="card-body">Sistema interno único donde las diferentes áreas visualicen la misma información del cliente, con el detalle apropiado a sus funciones. Vinculación entre productos para generar una relación integral y una propuesta de valor diferenciada por cliente.</div>
-      <div class="card-tag">Cliente único · Visión integral · Ecosistema</div>
     </div>
   </div>
 </section>
@@ -906,6 +883,1081 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
   </div>
 </section>
 
+
+<!-- ── CAPACIDADES TRANSVERSALES ─────────────────── -->
+<section class="section" id="capacidades">
+  <div class="eyebrow">Capacidades habilitadoras</div>
+  <h2 class="sec-title">La evolución de los tres segmentos depende de capacidades comunes</h2>
+  <p class="sec-lead">El diagnóstico identificó capacidades regulatorias, operativas, tecnológicas y de información que deben atenderse de forma común. Su configuración podrá variar por segmento, producto y nivel de complejidad.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+    <div class="card gold">
+      <div class="card-label">Capacidad 1</div>
+      <div class="card-title">Cumplimiento regulatorio</div>
+      <div class="card-body">KYC/CDD desde el onboarding y en actualizaciones periódicas. Buró de crédito, listas negras (OFAC, CNBV), buró legal y propietario real. Reportes a CNBV, Banxico, SIC e IPAB diferenciados por tipo de producto. Cálculo de reservas por producto y parámetros de riesgo.</div>
+      <div class="card-tag">CNBV · PLD · Banxico · IPAB</div>
+    </div>
+    <div class="card navy">
+      <div class="card-label">Capacidad 2</div>
+      <div class="card-title">Reglas de negocio</div>
+      <div class="card-body">Motor de reglas centralizado que cubra elegibilidad, condiciones de producto, límites de autorización y flujos de aprobación. Debe permitir configurar reglas por segmento y producto sin intervención de TI para ajustes de parámetros. Vinculación con rentabilidad individual y de portafolio.</div>
+      <div class="card-tag">Motor de reglas · Parametrización · Rentabilidad</div>
+    </div>
+    <div class="card teal">
+      <div class="card-label">Capacidad 3</div>
+      <div class="card-title">Seguridad</div>
+      <div class="card-body">CVV dinámico y doble factor para banca digital. Control de acceso por usuario con atributos diferenciados dentro del cliente. Auditoría de cambios en sistemas con notificación a todas las áreas afectadas. Estándares de ciberseguridad en aplicaciones transaccionales.</div>
+      <div class="card-tag">Autenticación · Control de acceso · Auditoría</div>
+    </div>
+    <div class="card gold">
+      <div class="card-label">Capacidad 4</div>
+      <div class="card-title">Capacidades operativas</div>
+      <div class="card-body">Capacidad de core bancario que permita administrar de manera consistente los productos, operaciones e información requeridos por los segmentos. Automatización de procesos que permita escalar sin incrementar la plantilla. Incorporación de inteligencia artificial en los procesos que lo permitan, con cumplimiento regulatorio. Banca digital funcional para el cliente empresarial.</div>
+      <div class="card-tag">Core · IA · Automatización · Escalabilidad</div>
+    </div>
+    <div class="card navy">
+      <div class="card-label">Capacidad 5</div>
+      <div class="card-title">Monitoreo y control</div>
+      <div class="card-body">Flujo de actualización de expediente e información financiera en tiempo y forma. Conexiones con sistemas de PLD, prevención de fraudes y sanciones. Información en tiempo real para monitoreo de cartera. Integración con ERP del cliente para registro contable correcto.</div>
+      <div class="card-tag">Tiempo real · PLD · ERP · Cartera</div>
+    </div>
+    <div class="card green">
+      <div class="card-label">Prioridad transversal</div>
+      <div class="card-title">Visión 360 del cliente</div>
+      <div class="card-body">Sistema interno único donde las diferentes áreas visualicen la misma información del cliente, con el detalle apropiado a sus funciones. Vinculación entre productos para generar una relación integral y una propuesta de valor diferenciada por cliente.</div>
+      <div class="card-tag">Cliente único · Visión integral · Ecosistema</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEMENOS · REFERENCIA DE PLATAFORMA ─────────── -->
+<section class="section light" id="temenos">
+  <div class="eyebrow">Referencia de plataforma</div>
+  <h2 class="sec-title">Temenos: la plataforma contratada para habilitar el modelo mayorista</h2>
+  <p class="sec-lead">Esta sección concentra en un solo lugar el alcance de la relación con Temenos: qué módulos están contratados, qué ofrece cada módulo disponible, cómo se traduce en valor para el negocio y qué temas deben validarse con el proveedor. Su propósito es servir como fuente única de referencia para las decisiones de producto, tecnología y priorización de inversión.</p>
+
+  <div class="hallazgo-box">
+    <div class="hallazgo-label">Lectura ejecutiva</div>
+    <div class="hallazgo-text">Consubanco ya cuenta con una base sólida para operar la banca empresarial: canal digital, configuración de productos y cuentas, pagos, contabilidad, conectividad, integración de datos y localización para México.<br><br>La plataforma también dispone de módulos de crédito, riesgo y cumplimiento para cubrir el ciclo completo del crédito empresarial, aunque actualmente no forman parte del alcance contratado. Esto confirma que la solución tiene capacidad para acompañar la evolución del modelo futuro, conforme se definan nuevas prioridades y alcances.</div>
+  </div>
+
+  <div class="dim-grid">
+    <a class="dim-card dim-link" href="#temenos-mapa"><div class="dim-pct">75</div><div class="dim-name">Módulos evaluados<br>en la matriz</div><span class="dim-cta">Ver mapa de módulos</span></a>
+    <a class="dim-card dim-link" href="#temenos-base"><div class="dim-pct">9</div><div class="dim-name">Módulos contratados<br>hoy</div><span class="dim-cta">Ver base contratada</span></a>
+    <a class="dim-card dim-link" href="#temenos-mapa"><div class="dim-pct">29</div><div class="dim-name">Módulos críticos para PyME<br>aún no contratados</div><span class="dim-cta">Ver mapa de módulos</span></a>
+    <a class="dim-card dim-link" href="#temenos-fichas"><div class="dim-pct">18</div><div class="dim-name">Fichas funcionales<br>con caso de negocio</div><span class="dim-cta">Ver fichas funcionales</span></a>
+  </div>
+
+  <div class="divider" id="temenos-base">
+    <div class="div-line"></div>
+    <div class="div-label">Base contratada</div>
+    <div class="div-line"></div>
+  </div>
+  <p class="sec-lead" style="margin-bottom:24px">Los nueve módulos contratados constituyen la infraestructura mínima del core: permiten abrir cuentas, configurar productos, procesar pagos domésticos, contabilizar la operación y presentar un canal digital al cliente empresarial, con la parametrización regulatoria y fiscal de México.</p>
+  <div class="mod-list">
+    <div class="mod-row">
+      <div class="mod-name">SME Banking</div>
+      <div class="mod-desc">Portal y app transaccional dedicados a pequeñas y medianas empresas: banca en línea empresarial con esquemas multiusuario, jerarquías de aprobación (maker-checker), banca móvil, layouts de pago masivo, estados de cuenta y dispersión de nómina.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Product Design</div>
+      <div class="mod-desc">Motor de parametrización y configuración de productos financieros (tasas, plazos, comisiones, condiciones de elegibilidad) sin requerir desarrollo a medida.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Product Pricing &amp; Bundling</div>
+      <div class="mod-desc">Motor de tarificación dinámica y empaquetado (bundling) de productos por segmento, cliente o campaña.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Accounts</div>
+      <div class="mod-desc">Núcleo de cuentas de depósito a la vista: apertura, mantenimiento, movimientos, bloqueos, sobregiros y cierre.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Local Payments</div>
+      <div class="mod-desc">Procesamiento de pagos domésticos: transferencias interbancarias, SPEI, domiciliación (CoDi/recurrencias) y pagos de servicios.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Accounting</div>
+      <div class="mod-desc">Motor de contabilización automática (libro mayor) de todas las transacciones generadas por el core bancario.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Payment Gateway</div>
+      <div class="mod-desc">Puerta de enlace de conectividad hacia rieles de pago externos (SPEI, redes de tarjetas, proveedores de pago) y orquestación de mensajería.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">TDH (Temenos Data Hub)</div>
+      <div class="mod-desc">Capa de integración e intercambio de datos entre los módulos de la plataforma Temenos y sistemas externos del banco (middleware de datos).</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+    <div class="mod-row">
+      <div class="mod-name">Country Models</div>
+      <div class="mod-desc">Plantillas de configuración local (México): parametrización regulatoria, contable, fiscal y de producto conforme al marco normativo local, acelerando la implementación frente a una configuración desde cero.</div>
+      <div class="patron-badge pb-green">Contratado</div>
+    </div>
+  </div>
+
+  <div class="divider" id="temenos-mapa" style="margin-top:40px">
+    <div class="div-line"></div>
+    <div class="div-label">Mapa completo de módulos por dominio</div>
+    <div class="div-line"></div>
+  </div>
+  <p class="sec-lead" style="margin-bottom:24px">El catálogo completo de la plataforma, organizado por dominio. Cada módulo indica su estatus y su clasificación para el negocio PyME: crítico, recomendado, opcional o no aplicable. Los nombres de los módulos se conservan en inglés porque así se identifican en el contrato y en la documentación del proveedor.</p>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">XAI · Inteligencia artificial explicable</div>
+          <div class="acord-sub">9 módulos · 0 contratados · 1 crítico para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Retail Scoring</div>
+        <div class="mod-desc">Motor de calificación crediticia explicable para personas físicas. Calcula probabilidad de incumplimiento y genera la razón de cada decisión (variables que más pesaron), habilitando auditoría de modelos ante el regulador.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Scoring</div>
+        <div class="mod-desc">Motor de scoring crediticio para personas morales pequeñas y medianas. Combina buró de crédito empresarial, comportamiento transaccional, flujo de caja y datos alternativos para calificar riesgo, con trazabilidad explicable de cada calificación.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Wealth Scoring</div>
+        <div class="mod-desc">Modelos de perfilamiento de riesgo e idoneidad de inversión para clientes patrimoniales.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Retail Customer Management</div>
+        <div class="mod-desc">Modelos de IA para segmentación, predicción de abandono (churn) y comportamiento de clientes personas físicas.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Customer Management</div>
+        <div class="mod-desc">Modelos de IA para segmentación, predicción de abandono y comportamiento de clientes PYME, permitiendo acciones proactivas de retención por parte del ejecutivo de cuenta.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Transaction Management</div>
+        <div class="mod-desc">Analítica de IA sobre patrones transaccionales del cliente: categorización de gasto/ingreso, detección de anomalías de comportamiento y generación de insights financieros.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Retail Next Best Product</div>
+        <div class="mod-desc">Motor de recomendación de siguiente mejor producto/oferta para clientes personas físicas, basado en perfil y ciclo de vida.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Next Best Product</div>
+        <div class="mod-desc">Motor de recomendación de siguiente mejor producto para empresas (p. ej. sugerir línea de capital de trabajo, factoraje o TPV según el comportamiento transaccional del negocio).</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">FCM Outlier Detection</div>
+        <div class="mod-desc">IA aplicada a Financial Crime Mitigation que detecta transacciones atípicas no cubiertas por reglas estáticas de AML, complementando el motor de reglas con aprendizaje de comportamiento.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Canales</div>
+          <div class="acord-sub">4 módulos · 1 contratado · 1 crítico para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Retail Banking</div>
+        <div class="mod-desc">Canal digital (app/web) transaccional para clientes personas físicas: consulta de saldos, transferencias, pagos de servicios.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Banking</div>
+        <div class="mod-desc">Portal y app transaccional dedicados a pequeñas y medianas empresas: banca en línea empresarial con esquemas multiusuario, jerarquías de aprobación (maker-checker), banca móvil, layouts de pago masivo, estados de cuenta y dispersión de nómina.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Corporate Banking</div>
+        <div class="mod-desc">Canal para grandes corporativos con funcionalidad avanzada: multi-entidad, tesorería centralizada, conectividad host-to-host (H2H) y archivos masivos.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Wealth Banking</div>
+        <div class="mod-desc">Canal digital para clientes de banca patrimonial e inversión.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Fidelización del Cliente</div>
+          <div class="acord-sub">10 módulos · 0 contratados · 6 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Retail Onboarding &amp; Origination</div>
+        <div class="mod-desc">Flujos digitales de alta y contratación de productos para personas físicas.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Onboarding &amp; Origination</div>
+        <div class="mod-desc">Flujo digital de alta de personas morales: captura de datos societarios, representantes legales y beneficiarios finales, validación documental (acta constitutiva, poderes notariales), integración con KYC/AML y activación de producto en línea recta (straight-through processing).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Corporate Onboarding &amp; Origination</div>
+        <div class="mod-desc">Flujo de alta para corporativos con estructuras societarias complejas (tenedoras, subsidiarias, consorcios).</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Wealth Onboarding &amp; Origination</div>
+        <div class="mod-desc">Flujo de alta para clientes de banca patrimonial.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Relationship Engagement</div>
+        <div class="mod-desc">Vista 360° para el ejecutivo/gestor de relación: pipeline comercial, tareas, alertas de oportunidad y próximas interacciones con el cliente.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Marketing Campaigns</div>
+        <div class="mod-desc">Motor de diseño, segmentación y ejecución de campañas comerciales dirigidas a la base de clientes.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Orders</div>
+        <div class="mod-desc">Gestión del ciclo de vida de solicitudes de productos y servicios (altas, modificaciones, cancelaciones) con seguimiento de estatus end-to-end.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Product Catalogue</div>
+        <div class="mod-desc">Catálogo central de productos y servicios disponibles, con definiciones comerciales, reglas de elegibilidad y condiciones de oferta por segmento.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Party</div>
+        <div class="mod-desc">Repositorio maestro de datos del cliente (Party Model): identificación, relaciones, jerarquías societarias, grupos económicos y apoderados.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Holdings</div>
+        <div class="mod-desc">Vista consolidada de todos los productos, saldos y posiciones que un cliente mantiene con el banco (visión 360° de relación).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Productos</div>
+          <div class="acord-sub">20 módulos · 4 contratados · 9 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Product Design</div>
+        <div class="mod-desc">Motor de parametrización y configuración de productos financieros (tasas, plazos, comisiones, condiciones de elegibilidad) sin requerir desarrollo a medida.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Product Pricing &amp; Bundling</div>
+        <div class="mod-desc">Motor de tarificación dinámica y empaquetado (bundling) de productos por segmento, cliente o campaña.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Accounts</div>
+        <div class="mod-desc">Núcleo de cuentas de depósito a la vista: apertura, mantenimiento, movimientos, bloqueos, sobregiros y cierre.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Retail Deposits</div>
+        <div class="mod-desc">Productos de captación para personas físicas (ahorro, depósito a plazo).</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Retail Loans</div>
+        <div class="mod-desc">Créditos al consumo para personas físicas.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">E-Money</div>
+        <div class="mod-desc">Emisión y gestión de dinero electrónico y monederos digitales.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SME Loans</div>
+        <div class="mod-desc">Motor de crédito empresarial: líneas de capital de trabajo, crédito simple, crédito revolvente, calendarios de amortización, garantías asociadas y condiciones preferenciales PYME.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Trade Finance</div>
+        <div class="mod-desc">Cartas de crédito, cobranzas documentarias y garantías bancarias para financiamiento de comercio exterior.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Corporate Loans</div>
+        <div class="mod-desc">Créditos estructurados y sindicados para grandes corporativos.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Cash Mgmt &amp; Virtual Accts</div>
+        <div class="mod-desc">Gestión de efectivo empresarial mediante cuentas virtuales, concentración y dispersión de fondos (cash pooling) y conciliación automática de cobros.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Securities</div>
+        <div class="mod-desc">Custodia y operación de valores.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Portfolio Management</div>
+        <div class="mod-desc">Gestión de portafolios de inversión de clientes.</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Corporate Actions</div>
+        <div class="mod-desc">Procesamiento de eventos corporativos sobre valores (dividendos, splits, suscripciones).</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Islamic Banking</div>
+        <div class="mod-desc">Productos financieros conformes a la Sharia (Murabaha, Ijara, Musharaka).</div>
+        <div class="patron-badge pb-gray">No aplica</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Inclusive Banking</div>
+        <div class="mod-desc">Productos y procesos diseñados para inclusión financiera: montos bajos, biometría, agentes corresponsales, procesos simplificados.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Mandates</div>
+        <div class="mod-desc">Gestión de poderes y facultades de firma sobre cuentas: quién puede operar, mancomunidad y límites de autorización por firmante.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Instant Payments</div>
+        <div class="mod-desc">Procesamiento de pagos en tiempo real (equivalente a SPEI en México) con liquidación en segundos, 24/7.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Payments Execution &amp; Clearing</div>
+        <div class="mod-desc">Motor de ejecución y liquidación de pagos multi-riel (bajo y alto valor, doméstico e internacional).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Request to Pay</div>
+        <div class="mod-desc">Solicitud de pago digital iniciada por el beneficiario (cobro por invitación), integrable con facturación electrónica.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Local Payments</div>
+        <div class="mod-desc">Procesamiento de pagos domésticos: transferencias interbancarias, SPEI, domiciliación (CoDi/recurrencias) y pagos de servicios.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Operaciones</div>
+          <div class="acord-sub">10 módulos · 0 contratados · 6 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Collateral Management</div>
+        <div class="mod-desc">Gestión de garantías (colateral) asociadas a créditos: alta, valuación, monitoreo de cobertura y liberación.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Local Clearing</div>
+        <div class="mod-desc">Conectividad y liquidación con cámaras de compensación domésticas (p. ej. Banco de México).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Collections</div>
+        <div class="mod-desc">Gestión de cobranza y recuperación de cartera vencida, incluyendo estrategias de contacto y seguimiento de promesas de pago.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">International Clearing</div>
+        <div class="mod-desc">Liquidación de pagos transfronterizos con bancos corresponsales.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Limit Management</div>
+        <div class="mod-desc">Gestión de líneas y límites de crédito/exposición por cliente, grupo económico y producto.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Payment Repair</div>
+        <div class="mod-desc">Corrección y reparación de pagos con datos incompletos o inválidos antes de su rechazo.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Funds Authorisations</div>
+        <div class="mod-desc">Autorización y bloqueo (hold) de fondos previo a la liquidación de una transacción.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Commissions</div>
+        <div class="mod-desc">Motor de cálculo, cobro y conciliación de comisiones bancarias por producto y transacción.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Reconciliations</div>
+        <div class="mod-desc">Conciliación automática de cuentas y transacciones entre sistemas internos y contrapartes externas.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Treasury</div>
+        <div class="mod-desc">Gestión de tesorería propia del banco: posición de liquidez, fondeo y calce de plazos.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Soporte de Negocio</div>
+          <div class="acord-sub">4 módulos · 2 contratados · 2 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Accounting</div>
+        <div class="mod-desc">Motor de contabilización automática (libro mayor) de todas las transacciones generadas por el core bancario.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Positions</div>
+        <div class="mod-desc">Consolidación de posiciones de balance por producto, moneda y cliente.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Payment Gateway</div>
+        <div class="mod-desc">Puerta de enlace de conectividad hacia rieles de pago externos (SPEI, redes de tarjetas, proveedores de pago) y orquestación de mensajería.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">SWIFT Connectivity</div>
+        <div class="mod-desc">Conectividad a la red SWIFT para pagos y mensajería financiera internacional.</div>
+        <div class="patron-badge pb-navy">Opcional</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Análisis y Datos</div>
+          <div class="acord-sub">5 módulos · 1 contratado · 3 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Analytics</div>
+        <div class="mod-desc">Suite de reportes e inteligencia de negocio: dashboards ejecutivos, KPIs comerciales, de riesgo y de rentabilidad.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Data Lake</div>
+        <div class="mod-desc">Repositorio centralizado de datos crudos de todas las fuentes del banco para analítica avanzada y modelos de IA.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Market Data Management</div>
+        <div class="mod-desc">Gestión centralizada de datos de mercado: tasas de referencia, tipos de cambio, curvas.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Reference Data Management</div>
+        <div class="mod-desc">Gestión centralizada de datos maestros y de referencia: catálogos, códigos postales, calendarios bancarios, sucursales.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">TDH (Temenos Data Hub)</div>
+        <div class="mod-desc">Capa de integración e intercambio de datos entre los módulos de la plataforma Temenos y sistemas externos del banco (middleware de datos).</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Riesgo y Cumplimiento</div>
+          <div class="acord-sub">12 módulos · 0 contratados · 9 críticos para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">RFR (Risk-Free Rates)</div>
+        <div class="mod-desc">Soporte a tasas de referencia libres de riesgo post-transición LIBOR (SOFR y equivalentes) en el cálculo de productos.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">FATCA</div>
+        <div class="mod-desc">Motor de identificación y reporte de clientes con nexo fiscal en EE.UU. conforme al Foreign Account Tax Compliance Act.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Customer Compliance</div>
+        <div class="mod-desc">Motor de cumplimiento normativo por cliente: aplicación de políticas internas, restricciones y bloqueos regulatorios.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Watchlists</div>
+        <div class="mod-desc">Verificación (screening) de clientes y transacciones contra listas de sanciones, PEP y otras listas de vigilancia.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Know Your Customer</div>
+        <div class="mod-desc">Motor de KYC basado en riesgo con debida diligencia (y debida diligencia reforzada) durante la incorporación y el ciclo de vida del cliente.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Open Banking Policy Engine</div>
+        <div class="mod-desc">Motor de políticas para exposición y control de APIs de banca abierta hacia terceros autorizados.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">IFRS Reporting</div>
+        <div class="mod-desc">Generación de reportes contables/financieros bajo Normas Internacionales de Información Financiera, incluida la estimación de pérdidas esperadas (IFRS 9).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Financial Risk Management</div>
+        <div class="mod-desc">Gestión de riesgo financiero de la institución: riesgo de mercado, liquidez y tasa de interés.</div>
+        <div class="patron-badge pb-gold">Recomendado</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">CRS Reporting</div>
+        <div class="mod-desc">Reporte fiscal bajo el Common Reporting Standard para intercambio automático de información entre jurisdicciones.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Tax</div>
+        <div class="mod-desc">Motor de cálculo, retención y reporte de impuestos aplicables a productos y transacciones (p. ej. ISR, IVA sobre comisiones).</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">Fraud Monitoring</div>
+        <div class="mod-desc">Monitoreo de fraude transaccional en tiempo real mediante reglas y modelos de comportamiento.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      <div class="mod-row">
+        <div class="mod-name">AML Monitoring</div>
+        <div class="mod-desc">Monitoreo antilavado de dinero: perfilamiento de clientes y detección de transacciones inusuales o sospechosas.</div>
+        <div class="patron-badge pb-red">Crítico</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Localización</div>
+          <div class="acord-sub">1 módulos · 1 contratado · 1 crítico para PyME</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="mod-list">
+      <div class="mod-row">
+        <div class="mod-name">Country Models</div>
+        <div class="mod-desc">Plantillas de configuración local (México): parametrización regulatoria, contable, fiscal y de producto conforme al marco normativo local, acelerando la implementación frente a una configuración desde cero.</div>
+        <div class="patron-badge pb-green">Contratado</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider" id="temenos-fichas" style="margin-top:40px">
+    <div class="div-line"></div>
+    <div class="div-label">Fichas funcionales · módulos prioritarios para PyME</div>
+    <div class="div-line"></div>
+  </div>
+  <p class="sec-lead" style="margin-bottom:24px">Detalle de los módulos con caso de negocio documentado: alcance funcional, palancas de valor y el costo de no tenerlos. Las cifras de impacto citadas provienen de material del proveedor y deberán validarse caso por caso.</p>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Holdings</div>
+          <div class="acord-sub">Fidelización del Cliente · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Microservicio fuente de verdad para saldos y transacciones de todos los productos de un cliente en tiempo real (cuentas, créditos, tarjetas, TPV). Se apoya en Party para presentar, cuando aplica, la posición consolidada de un grupo económico completo (empresa + relacionadas). Se expone vía API a los canales (SME Banking), al CRM del ejecutivo y a Relationship Engagement, habilitando acciones de servicio (cambiar límites, gestionar tarjetas, iniciar pagos) desde una sola vista.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Vista de rentabilidad total por cliente (no por producto aislado) habilita pricing y retención basados en el valor completo de la relación; Temenos reporta en material de producto incrementos de hasta 57% en cross-sell/upsell al pasar de vista por producto a vista de relación 360° (cifra de referencia del proveedor, a validar caso por caso).</div>
+        <div class="ficha-palanca"><b>Eficiencia operativa.</b> Una sola pantalla para el ejecutivo en vez de consultar módulo por módulo reduce tiempo de atención y errores de reconciliación manual de saldos.</div>
+        <div class="ficha-palanca"><b>Riesgo.</b> La consolidación de exposición a nivel de grupo económico alimenta a Limit Management con una foto real de exposición total, no fragmentada.</div>
+        <div class="ficha-palanca"><b>Experiencia digital.</b> El cliente ve su posición consolidada en el portal SME Banking, reforzando la percepción de "banco de cabecera".</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Sin Holdings se requeriría un agregador propio vía integraciones punto a punto entre módulos de producto: mayor costo de desarrollo, mayor latencia, riesgo de inconsistencia de datos y pérdida del soporte/actualizaciones nativas de Temenos.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Party</div>
+          <div class="acord-sub">Fidelización del Cliente · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Repositorio maestro de datos del cliente (Party Model): identificación, relaciones (representantes legales, apoderados, beneficiarios finales), jerarquías societarias y grupos económicos. Es el "golden record" que consultan como fuente única los módulos de KYC, Scoring, Onboarding, Limit Management y Holdings.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Modelar correctamente los grupos económicos permite ofertas y límites a nivel de grupo (no solo por razón social aislada), abriendo oportunidades de venta cruzada dentro del mismo grupo empresarial.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Elimina la captura duplicada de datos del cliente en cada módulo; un solo mantenimiento de datos maestros reduce costos operativos y errores de inconsistencia.</div>
+        <div class="ficha-palanca"><b>Riesgo y cumplimiento.</b> Una relación mal modelada (no detectar que dos razones sociales comparten el mismo dueño real) es causa común de fallas de KYC/AML; jerarquías correctas en Party reducen ese riesgo.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Sin un Party robusto, cada módulo mantiene su propia copia de datos de cliente, generando inconsistencias, mayor esfuerzo de conciliación manual y mayor riesgo regulatorio por datos desactualizados o contradictorios entre sistemas.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">SME Onboarding &amp; Origination</div>
+          <div class="acord-sub">Fidelización del Cliente · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Flujo digital de alta de personas morales: captura de datos societarios, representantes legales y beneficiarios finales; validación documental (acta constitutiva, poderes notariales); orquesta KYC/AML dentro del mismo flujo; activa el producto en línea recta (straight-through processing) sin intervención manual.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Reduce el tiempo de alta de días a minutos, disminuyendo la tasa de abandono (drop-off) en la solicitud y acelerando el time-to-revenue de cada cliente nuevo.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Automatiza la validación documental y reduce la carga operativa del área de apertura, permitiendo escalar el número de altas sin escalar linealmente la plantilla.</div>
+        <div class="ficha-palanca"><b>Riesgo y cumplimiento.</b> Integrar KYC/AML dentro del mismo flujo evita que un cliente quede activo sin validación completa, brecha común cuando onboarding y cumplimiento son procesos separados.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Alta manual con captura repetida en múltiples sistemas, mayor tiempo de activación (afecta la experiencia y la competitividad frente a fintechs) y mayor riesgo de omitir un paso de cumplimiento.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">SME Scoring</div>
+          <div class="acord-sub">XAI · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de scoring crediticio para personas morales que combina buró de crédito empresarial, comportamiento transaccional (alimentado por Transaction Management/Holdings), flujo de caja y datos alternativos, con explicabilidad (XAI) de cada calificación.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Habilita originación de crédito en línea recta para perfiles de bajo riesgo, aumentando el volumen de colocación sin incrementar proporcionalmente el equipo de análisis de crédito.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Reduce el tiempo de decisión crediticia de días a minutos/horas para la mayoría de solicitudes estándar.</div>
+        <div class="ficha-palanca"><b>Riesgo.</b> Mejora la consistencia y objetividad de la decisión frente a un proceso manual heterogéneo entre analistas; la explicabilidad facilita auditoría interna y ante el regulador.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>El crédito PYME queda dependiente de análisis manual, con tiempos de respuesta no competitivos y mayor variabilidad -y por tanto riesgo- en la calidad de las decisiones.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">SME Loans</div>
+          <div class="acord-sub">Productos · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de administración de crédito empresarial: líneas de capital de trabajo, crédito simple, crédito revolvente, calendarios de amortización, tasas y condiciones especiales, con vínculo nativo a garantías (Collateral Management) y límites (Limit Management).</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Es el producto de activo central del negocio PYME; sin un motor de crédito flexible no hay margen financiero relevante más allá de comisiones transaccionales.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Administra de forma automatizada el ciclo de vida del crédito (disposición, pago, refinanciamiento), reduciendo trabajo manual de back office.</div>
+        <div class="ficha-palanca"><b>Riesgo.</b> La integración nativa con Collateral y Limit Management (módulos adicionales) asegura que cada disposición respeta garantías y límites vigentes, evitando sobreexposición.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Sin este módulo el banco no tendría un producto de crédito empresarial competitivo dentro del core Temenos, forzando desarrollo a la medida o un sistema de crédito separado, con mayor costo total de propiedad y riesgo de integración.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Collateral Management</div>
+          <div class="acord-sub">Operaciones · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Gestión del ciclo de vida de garantías asociadas a créditos: alta, valuación, monitoreo de cobertura (LTV), sustitución y liberación; vincula cada garantía, vía API, a los contratos de crédito específicos que respalda.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Riesgo.</b> Evita que un crédito quede "descubierto" cuando el valor de la garantía cae, mediante alertas automáticas de recomposición de garantía.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Automatiza la valuación periódica y el seguimiento de cobertura, evitando revisiones manuales dispersas en hojas de cálculo.</div>
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Soporta el cálculo correcto de provisiones (IFRS 9) y de capital regulatorio, que dependen de la garantía efectivamente reconocida.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>El seguimiento de garantías tiende a hacerse en hojas de cálculo paralelas, con alto riesgo de desactualización y de descubrir tarde un deterioro de cobertura.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Limit Management</div>
+          <div class="acord-sub">Operaciones · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Gestión de líneas y límites de crédito/exposición por cliente, por grupo económico (identificador de grupo de riesgo que agrupa clientes relacionados) y por producto, calculando la exposición colectiva compartida entre entidades relacionadas.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Riesgo.</b> Evita la sobreexposición a un mismo grupo económico cuando el crédito se otorga a través de varias razones sociales relacionadas, riesgo típico en carteras PYME con estructuras familiares/empresariales entrelazadas.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Automatiza la validación de disponibilidad de línea en cada disposición, sin requerir autorización manual de crédito en cada operación.</div>
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Es la base para reportes regulatorios de concentración de riesgo por acreditado y grupo de riesgo exigidos por el regulador.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Mayor probabilidad de exceder límites prudenciales sin visibilidad centralizada, con el consiguiente riesgo regulatorio y de pérdida crediticia.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Payment Repair</div>
+          <div class="acord-sub">Operaciones · Clasificación para PyME: Recomendado</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Componente que detecta y corrige pagos con datos incompletos o inválidos (cuenta destino mal capturada, campo faltante) antes de que sean rechazados, embebido en Payments Hub o como servicio independiente.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Eficiencia.</b> Reduce el volumen de pagos rechazados que requieren intervención manual del área de operaciones para reprocesar.</div>
+        <div class="ficha-palanca"><b>Experiencia del cliente.</b> Menos transferencias fallidas o retrasadas percibidas por el cliente PYME, que depende de esos pagos para su propia operación (proveedores, nómina).</div>
+        <div class="ficha-palanca"><b>Ingresos indirectos.</b> Menor fuga de clientes por fricción operativa en un servicio tan sensible como los pagos.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Cada pago con error se rechaza y regresa al cliente o al ejecutivo para corrección manual, incrementando quejas y carga operativa.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Reconciliations</div>
+          <div class="acord-sub">Operaciones · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de conciliación automática entre las cuentas/transacciones del core y las de contrapartes externas (bancos corresponsales, cámaras de compensación, proveedores de pago), identificando diferencias y partidas pendientes.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Eficiencia.</b> Elimina la conciliación manual entre sistemas, que en banca tradicional consume horas de trabajo de tesorería/operaciones cada día.</div>
+        <div class="ficha-palanca"><b>Riesgo y control interno.</b> Detecta discrepancias tempranamente (fraude, error operativo, duplicidad), control interno esperado por auditoría y por el regulador.</div>
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Soporta la integridad contable exigida en los estados financieros y en reportes regulatorios.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Conciliaciones manuales en hojas de cálculo, mayor tiempo de cierre contable y mayor riesgo de diferencias no detectadas a tiempo.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Commissions</div>
+          <div class="acord-sub">Operaciones · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de cálculo, cobro y conciliación de comisiones bancarias (manejo de cuenta, transferencias, TPV, disposición de línea de crédito), configurable por producto/segmento, con trazabilidad de cada cobro.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos.</b> Las comisiones son una fuente de ingreso no basada en margen financiero (menos sensible a tasas de referencia); un motor flexible permite diseñar esquemas diferenciados por segmento PYME.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Automatiza el cálculo y cobro, evitando conciliaciones manuales entre lo cobrado y lo esperado.</div>
+        <div class="ficha-palanca"><b>Transparencia y cumplimiento.</b> Da trazabilidad auditable de cada comisión cobrada, relevante ante reclamaciones de clientes o revisión de CONDUSEF/CNBV.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Cálculo manual o parametrización rígida de comisiones, con mayor riesgo de error (sobre-cobro o cobro faltante) y menor capacidad de diferenciar ofertas comerciales.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Instant Payments</div>
+          <div class="acord-sub">Productos · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Procesamiento de pagos en tiempo real (equivalente a SPEI en México) con liquidación en segundos, disponible 24/7/365, integrado con Payments Execution &amp; Clearing y Local Clearing.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Ingresos / competitividad.</b> Es un factor de higiene en el mercado mexicano: sin pagos instantáneos la oferta PYME no es competitiva frente a bancos y fintechs que ya lo ofrecen.
+
+Qué diferencia hay contra Local Paymets?</div>
+        <div class="ficha-palanca"><b>Experiencia del cliente.</b> Las PYME dependen de flujo de caja diario; pagos y cobros inmediatos mejoran directamente su operación (proveedores, nómina, cobro a clientes).</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Reduce llamadas y reclamos por "pagos que no llegan", típicos de rieles de liquidación diferida.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Percepción de producto bancario rezagado frente a la competencia y fricción real en la operación diaria del cliente empresarial.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Payments Execution &amp; Clearing</div>
+          <div class="acord-sub">Productos · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor central de ejecución y liquidación de pagos multi-riel (bajo y alto valor, doméstico e internacional), que gestiona el ciclo completo desde la orden hasta la liquidación y el enrutamiento a la cámara correspondiente.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Eficiencia.</b> Consolida en un solo motor el procesamiento de todos los tipos de pago, evitando integraciones separadas por cada riel.</div>
+        <div class="ficha-palanca"><b>Escalabilidad.</b> Soporta crecimiento en volumen transaccional sin rediseño, clave si la base de clientes PYME crece rápido.</div>
+        <div class="ficha-palanca"><b>Riesgo operativo.</b> El procesamiento estandarizado reduce errores de enrutamiento y liquidación frente a integraciones a la medida por riel.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Sin un motor central, cada tipo de pago (SPEI, tarjetas, domiciliación) requeriría su propia integración aislada, incrementando el costo de mantenimiento y el riesgo de inconsistencias.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Mandates</div>
+          <div class="acord-sub">Productos · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Gestión de poderes y facultades de firma sobre cuentas empresariales: quién puede operar, bajo qué modalidad (individual, mancomunada) y con qué límites de autorización por firmante o por monto.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Riesgo y control legal.</b> Es un requisito legal y operativo básico en banca empresarial; sin control formal de mandatos, el banco asume riesgo legal por operaciones no autorizadas correctamente.</div>
+        <div class="ficha-palanca"><b>Experiencia del cliente.</b> Permite a la empresa configurar sus propios esquemas de aprobación (p. ej. dos firmas para pagos mayores a cierto monto), diferenciador valorado por empresas con gobierno corporativo.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Automatiza la validación de facultades en cada operación, sin depender de revisión manual de poderes notariales cada vez.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>La validación de quién puede firmar/operar recae en procesos manuales y documentación física, con alto riesgo legal y operativo.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Customer Compliance</div>
+          <div class="acord-sub">Riesgo y Cumplimiento · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor que aplica políticas internas de cumplimiento y restricciones regulatorias a nivel de cliente (bloqueos, excepciones, límites operativos derivados de su perfil de riesgo o situación regulatoria).</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Asegura que las restricciones determinadas por KYC/AML/Watchlists se apliquen de forma consistente y automática en la operación diaria, no solo en el momento de alta.</div>
+        <div class="ficha-palanca"><b>Riesgo reputacional y regulatorio.</b> Reduce el riesgo de que un cliente con hallazgos de cumplimiento pendientes siga operando sin restricción, hallazgo típico de auditorías regulatorias.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Evita que el área de Cumplimiento monitoree manualmente cliente por cliente para aplicar restricciones.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Dependencia de procesos manuales para aplicar y dar seguimiento a restricciones, con alto riesgo de que una alerta de cumplimiento no se traduzca en una acción operativa real y oportuna.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Know Your Customer</div>
+          <div class="acord-sub">Riesgo y Cumplimiento · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de KYC basado en riesgo (KC+), con formularios dinámicos y flujos configurables durante la incorporación y durante todo el ciclo de vida del cliente, incluyendo revisión periódica y debida diligencia reforzada para perfiles de mayor riesgo.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Es una obligación regulatoria central; automatizarla reduce el riesgo de sanciones y observaciones por expedientes incompletos o desactualizados.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Flujos configurables sin desarrollo a medida permiten ajustar el proceso de KYC cuando cambie la normativa, sin depender de un proyecto de TI cada vez.</div>
+        <div class="ficha-palanca"><b>Experiencia del cliente.</b> Un KYC digital y basado en riesgo (no "una talla para todos") agiliza la incorporación de clientes de bajo riesgo sin sacrificar control sobre los de mayor riesgo.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Procesos de KYC manuales o en sistemas desconectados del core, con mayor riesgo de expedientes incompletos y de sanciones regulatorias.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Tax</div>
+          <div class="acord-sub">Riesgo y Cumplimiento · Clasificación para PyME: Crítico</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Motor de cálculo, retención y reporte de impuestos aplicables a productos y transacciones (ISR sobre intereses, IVA sobre comisiones, retenciones aplicables a personas morales).</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Automatiza obligaciones fiscales que de otra forma requerirían cálculo manual o parches a la medida, reduciendo el riesgo de errores en retenciones o declaraciones.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Integra el cálculo fiscal directamente en cada transacción del core, evitando procesos batch separados y reconciliaciones fiscales posteriores.</div>
+        <div class="ficha-palanca"><b>Riesgo.</b> Reduce la exposición a observaciones o sanciones fiscales por retenciones incorrectas.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Cálculo fiscal fuera del core (hojas de cálculo o sistemas paralelos), con mayor riesgo de inconsistencia entre lo contabilizado y lo efectivamente retenido/declarado.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Financial Risk Management</div>
+          <div class="acord-sub">Riesgo y Cumplimiento · Clasificación para PyME: Recomendado</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Solución preconfigurada de riesgo de mercado, liquidez y tasa de interés (ALM) con modelado de balance, pruebas de estrés y análisis de duración, alineada a Basilea e IFRS 9, alimentada casi en tiempo real desde el core.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Soporta directamente los requisitos de riesgo de liquidez y de tasa de interés exigidos por el regulador (equivalentes locales a Basilea/IFRS 9).</div>
+        <div class="ficha-palanca"><b>Riesgo.</b> Da visibilidad temprana de descalces de plazo y de tasa entre el activo (SME Loans) y el pasivo (depósitos), crítico cuando crece la cartera de crédito PYME.</div>
+        <div class="ficha-palanca"><b>Eficiencia.</b> Evita construir modelos de riesgo financiero a la medida o depender de hojas de cálculo para pruebas de estrés regulatorias.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>Gestión de riesgo de balance basada en procesos manuales, con mayor tiempo de reporte regulatorio y menor capacidad de anticipar descalces conforme crece la cartera de crédito.</div>
+    </div>
+  </div>
+  <div class="acord">
+    <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
+      <div class="acord-left">
+        <div>
+          <div class="acord-title">Positions</div>
+          <div class="acord-sub">Soporte de Negocio · Clasificación para PyME: Recomendado</div>
+        </div>
+      </div>
+      <div class="acord-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="acord-body">
+      <div class="ficha-label">Alcance funcional</div>
+      <div class="ficha-text">Consolidación de posiciones de balance por producto, moneda y cliente: la fotografía agregada de qué tiene el banco en activo/pasivo en un momento dado, insumo para tesorería y gestión financiera.</div>
+      <div class="ficha-label">Palancas de valor</div>
+      <div class="ficha-palancas">
+        <div class="ficha-palanca"><b>Eficiencia.</b> Da una vista consolidada sin tener que agregar manualmente saldos de distintos módulos de producto.</div>
+        <div class="ficha-palanca"><b>Gestión financiera.</b> Apoya decisiones de fondeo y calce de tesorería con datos consolidados y no fragmentados.</div>
+        <div class="ficha-palanca"><b>Cumplimiento.</b> Es insumo para reportes regulatorios que requieren posición consolidada por producto/moneda.</div>
+      </div>
+      <div class="ficha-cost"><b>Costo de no tenerlo</b>La gestión financiera y de tesorería dependería de agregaciones manuales entre módulos, con mayor riesgo de error y menor oportunidad en la toma de decisiones.</div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin-top:40px">
+    <div class="div-line"></div>
+    <div class="div-label">El valor de la plataforma</div>
+    <div class="div-line"></div>
+  </div>
+  <div class="mercado-grid">
+    <div class="mercado-card">
+      <div class="mercado-stat">300+</div>
+      <div class="mercado-title">Arquitectura modular preconfigurada</div>
+      <div class="mercado-body">La plataforma opera por módulos sobre un modelo bancario con más de 1,000 procesos y 90% de parámetros preconfigurados, con configuración low code que reduce el desarrollo a la medida y acelera el time to market de nuevos productos.</div>
+    </div>
+    <div class="mercado-card">
+      <div class="mercado-stat">MX</div>
+      <div class="mercado-title">Localización para México (Country Models)</div>
+      <div class="mercado-body">El Mexican Model Bank incorpora los requerimientos locales de operación: CLABE, validaciones de RFC, CURP e INE, cálculo de CAT y GAT, IVA e ISR, límites en UDIS y catálogos de actividad económica de la CNBV.</div>
+    </div>
+    <div class="mercado-card">
+      <div class="mercado-stat">2003</div>
+      <div class="mercado-title">Presencia y soporte local</div>
+      <div class="mercado-body">Temenos opera en México desde 2003, con oficina en la Ciudad de México, consultores certificados, soporte en español y clientes en todos los segmentos del sistema financiero mexicano.</div>
+    </div>
+  </div>
+
+  <div class="hallazgo-box" style="margin-top:32px;margin-bottom:0">
+    <div class="hallazgo-label">Temas abiertos a validar con el proveedor</div>
+    <div class="hallazgo-text">
+      <div class="ciclo-item" style="color:var(--text)">SME Onboarding &amp; Origination: confirmar si la solución incluye lectura automatizada de documentación con inteligencia artificial.</div>
+      <div class="ciclo-item" style="color:var(--text)">Instant Payments: precisar la diferencia funcional frente a Local Payments, que ya está contratado.</div>
+      <div class="ciclo-item" style="color:var(--text)">Customer Compliance y Know Your Customer: evaluar si el volumen de clientes justifica la adquisición de cada módulo.</div>
+      <div class="ciclo-item" style="color:var(--text)">Tax: definir su alcance considerando que el ERP registra los estados financieros.</div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="footer-brand">Consubanco · Banca Mayorista</div>
