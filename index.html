@@ -258,6 +258,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
 .dim-cta{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.05em}
 .dim-cta::after{content:' →'}
 #temenos-base,#temenos-mapa,#temenos-fichas{scroll-margin-top:70px}
+.temenos-subtitle{font-family:'Merriweather',serif;font-size:24px;font-weight:700;color:var(--navy);letter-spacing:-.01em;line-height:1.25;margin:52px 0 22px;padding-top:18px;border-top:3px solid var(--orange);display:block}
 </style>
 </head>
 <body>
@@ -921,6 +922,12 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
       <div class="card-body">Flujo de actualización de expediente e información financiera en tiempo y forma. Conexiones con sistemas de PLD, prevención de fraudes y sanciones. Información en tiempo real para monitoreo de cartera. Integración con ERP del cliente para registro contable correcto.</div>
       <div class="card-tag">Tiempo real · PLD · ERP · Cartera</div>
     </div>
+    <div class="card teal">
+      <div class="card-label">Capacidad 6</div>
+      <div class="card-title">Capacidades orientadas al cliente</div>
+      <div class="card-body">Manejo de jerarquías en las cuentas.<br>Administración de nómina.<br>Gestión de tesorería.<br>Inversiones de excedentes de tesorería.<br>Pago de servicios.<br>Capacidades de Cash Management.<br>Manejo de prepagos.</div>
+      <div class="card-tag">Identificada desde la visión de producto centrada en el cliente</div>
+    </div>
     <div class="card green">
       <div class="card-label">Prioridad transversal</div>
       <div class="card-title">Visión 360 del cliente</div>
@@ -1002,12 +1009,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
     </div>
   </div>
 
-  <div class="divider" id="temenos-mapa" style="margin-top:40px">
-    <div class="div-line"></div>
-    <div class="div-label">Mapa completo de módulos por dominio</div>
-    <div class="div-line"></div>
-  </div>
-  <p class="sec-lead" style="margin-bottom:24px">El catálogo completo de la plataforma, organizado por dominio. Cada módulo indica su estatus y su clasificación para el negocio PyME: crítico, recomendado, opcional o no aplicable. Los nombres de los módulos se conservan en inglés porque así se identifican en el contrato y en la documentación del proveedor.</p>
+  <h3 class="temenos-subtitle" id="temenos-mapa">Mapa completo de módulos por dominio</h3>
   <div class="acord">
     <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
       <div class="acord-left">
@@ -1519,11 +1521,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-
     </div>
   </div>
 
-  <div class="divider" id="temenos-fichas" style="margin-top:40px">
-    <div class="div-line"></div>
-    <div class="div-label">Fichas funcionales · módulos prioritarios para PyME</div>
-    <div class="div-line"></div>
-  </div>
+  <h3 class="temenos-subtitle" id="temenos-fichas">Fichas funcionales · módulos prioritarios para PyME</h3>
   <p class="sec-lead" style="margin-bottom:24px">Detalle de los módulos con caso de negocio documentado: alcance funcional, palancas de valor y el costo de no tenerlos. Las cifras de impacto citadas provienen de material del proveedor y deberán validarse caso por caso.</p>
   <div class="acord">
     <div class="acord-hdr" onclick="this.closest('.acord').classList.toggle('open')">
